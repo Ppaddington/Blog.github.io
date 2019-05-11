@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/HXHBlog.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/HXHBlog.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/HXHBlog.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/HXHBlog.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/HXHBlog.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/HXHBlog.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/HXHBlog.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、安装HBase之前先安装Hadoop1.下载Hadoop压缩包2.cd /usr/storm使用tar zxvf hadoop-3.1.1.tar.gz解压 3.创建hadoop用户（1）useradd -m hadoop -s /bin/bash # 创建新用户hadoop （2）passwd hadoop （3） visudo   root ALL=(ALL) ALL  然后在这行下面增加">
+<meta name="keywords" content="git repository:git@github.com:Ppaddington&#x2F;HXHBlog.github.io git repository:git@github.com:Ppaddington&#x2F;HXHBlog.github.io">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HBase安装步骤">
+<meta property="og:url" content="https://ppaddington.github.io/HXHBlog.github.io/2019/05/11/HBase安装步骤/index.html">
+<meta property="og:site_name" content="lalala">
+<meta property="og:description" content="一、安装HBase之前先安装Hadoop1.下载Hadoop压缩包2.cd /usr/storm使用tar zxvf hadoop-3.1.1.tar.gz解压 3.创建hadoop用户（1）useradd -m hadoop -s /bin/bash # 创建新用户hadoop （2）passwd hadoop （3） visudo   root ALL=(ALL) ALL  然后在这行下面增加">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ppaddington.github.io/HXHBlog.github.io/2019/05/11/HBase安装步骤/1.jpg">
+<meta property="og:image" content="https://ppaddington.github.io/HXHBlog.github.io/2019/05/11/HBase安装步骤/2.jpg">
+<meta property="og:image" content="https://ppaddington.github.io/HXHBlog.github.io/2019/05/11/HBase安装步骤/3.jpg">
+<meta property="og:image" content="https://ppaddington.github.io/HXHBlog.github.io/2019/05/11/HBase安装步骤/4.jpg">
+<meta property="og:image" content="https://ppaddington.github.io/HXHBlog.github.io/2019/05/11/HBase安装步骤/5.jpg">
+<meta property="og:image" content="https://ppaddington.github.io/HXHBlog.github.io/2019/05/11/HBase安装步骤/6.jpg">
+<meta property="og:image" content="https://ppaddington.github.io/HXHBlog.github.io/2019/05/11/HBase安装步骤/7.jpg">
+<meta property="og:image" content="https://ppaddington.github.io/HXHBlog.github.io/2019/05/11/HBase安装步骤/8.jpg">
+<meta property="og:image" content="https://ppaddington.github.io/HXHBlog.github.io/2019/05/11/HBase安装步骤/9.jpg">
+<meta property="og:updated_time" content="2019-05-11T09:36:32.990Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HBase安装步骤">
+<meta name="twitter:description" content="一、安装HBase之前先安装Hadoop1.下载Hadoop压缩包2.cd /usr/storm使用tar zxvf hadoop-3.1.1.tar.gz解压 3.创建hadoop用户（1）useradd -m hadoop -s /bin/bash # 创建新用户hadoop （2）passwd hadoop （3） visudo   root ALL=(ALL) ALL  然后在这行下面增加">
+<meta name="twitter:image" content="https://ppaddington.github.io/HXHBlog.github.io/2019/05/11/HBase安装步骤/1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/HXHBlog.github.io/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://ppaddington.github.io/HXHBlog.github.io/2019/05/11/HBase安装步骤/">
+
+
+
+
+
+  <title>HBase安装步骤 | lalala</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/HXHBlog.github.io/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lalala</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">帅帅的昊:-)</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/HXHBlog.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/HXHBlog.github.io/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/HXHBlog.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ppaddington.github.io/HXHBlog.github.io/HXHBlog.github.io/2019/05/11/HBase安装步骤/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xinhao Huang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/HXHBlog.github.io/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lalala">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HBase安装步骤</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-11T17:02:14+08:00">
+                2019-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、安装HBase之前先安装Hadoop"><a href="#一、安装HBase之前先安装Hadoop" class="headerlink" title="一、安装HBase之前先安装Hadoop"></a>一、安装HBase之前先安装Hadoop</h1><h2 id="1-下载Hadoop压缩包"><a href="#1-下载Hadoop压缩包" class="headerlink" title="1.下载Hadoop压缩包"></a>1.下载Hadoop压缩包</h2><h2 id="2-cd-usr-storm"><a href="#2-cd-usr-storm" class="headerlink" title="2.cd /usr/storm"></a>2.cd /usr/storm</h2><pre><code>使用tar zxvf hadoop-3.1.1.tar.gz解压
+</code></pre><h2 id="3-创建hadoop用户"><a href="#3-创建hadoop用户" class="headerlink" title="3.创建hadoop用户"></a>3.创建hadoop用户</h2><pre><code>（1）useradd -m hadoop -s /bin/bash # 创建新用户hadoop
+（2）passwd hadoop
+（3） visudo
+  root ALL=(ALL) ALL  然后在这行下面增加一行内容：hadoop ALL=(ALL) ALL （当中的间隔为tab）
+  添加好内容后，先按一下键盘上的 ESC 键，然后输入 :wq (输入冒号还有wq，这是vi/vim编辑器的保存方法)，再按回车键保存退出就可以了。
+  使用su hadoop即可登录hadoop用户名
+</code></pre><h2 id="4-sudo-mv-usr-storm-hadoop-3-1-1-usr-storm-hadoop-将文件夹名改为hadoop"><a href="#4-sudo-mv-usr-storm-hadoop-3-1-1-usr-storm-hadoop-将文件夹名改为hadoop" class="headerlink" title="4.$ sudo mv /usr/storm/hadoop-3.1.1/  /usr/storm/hadoop # 将文件夹名改为hadoop"></a>4.$ sudo mv /usr/storm/hadoop-3.1.1/  /usr/storm/hadoop # 将文件夹名改为hadoop</h2><pre><code>$ sudo chown -R hadoop:hadoop /usr/storm/hadoop # 修改文件权限
+如果不建立hadoop用户则   sudo chown -R root:hadoop /usr/storm/hadoop
+</code></pre><h2 id="5-环境变量"><a href="#5-环境变量" class="headerlink" title="5.环境变量"></a>5.环境变量</h2><pre><code>修改 /etc/profile
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HBASE_HOME=/usr/storm/hbase-2.1.0</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$HBASE_HOME</span>/bin</span><br><span class="line"><span class="built_in">export</span> HADOOP_HOME=/usr/storm/hadoop </span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$HADOOP_HOME</span>/bin</span><br></pre></td></tr></table></figure>
+
+然后 source /etc/profil
+</code></pre><h2 id="6-测试是否安装成功"><a href="#6-测试是否安装成功" class="headerlink" title="6.测试是否安装成功"></a>6.测试是否安装成功</h2><pre><code>root@storm-2:/usr/storm/hadoop/bin# hadoop version
+</code></pre><img src="/HXHBlog.github.io/2019/05/11/HBase安装步骤/1.jpg">
+<!-- ![](HBase安装步骤/1.jpg) -->
+<h2 id="7-配置集群-分布式环境"><a href="#7-配置集群-分布式环境" class="headerlink" title="7.配置集群/分布式环境"></a>7.配置集群/分布式环境</h2><pre><code>（1）参考https://www.cnblogs.com/xzjf/p/7231519.html  
+    修改/usr/storm/hadoop/etc/hadoop   中的
+    core-site.xml、hdfs-site.xml、mapred-site.xml和yarn-site.xml
+（2）建立对应的文件夹   /usr/storm/hadoop/tmp/dfs/name        mkdir tmp等等
+（3）$ hdfs namenode -format # 首次运行需要执行初始化，之后不需要
+</code></pre><h2 id="8-进入-usr-storm-hadoop-sbin-start-all-sh"><a href="#8-进入-usr-storm-hadoop-sbin-start-all-sh" class="headerlink" title="8.进入/usr/storm/hadoop/sbin       ./start-all.sh"></a>8.进入/usr/storm/hadoop/sbin       ./start-all.sh</h2><pre><code>提示缺少变量命名
+</code></pre><img src="/HXHBlog.github.io/2019/05/11/HBase安装步骤/2.jpg">
+<!-- ![](HBase安装步骤/2.jpg) -->
+<h2 id="9-命令行直接写入变量"><a href="#9-命令行直接写入变量" class="headerlink" title="9.命令行直接写入变量"></a>9.命令行直接写入变量</h2><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> HDFS_NAMENODE_USER=<span class="string">"root"</span></span><br><span class="line"><span class="built_in">export</span> HDFS_DATANODE_USER=<span class="string">"root"</span></span><br><span class="line"><span class="built_in">export</span> HDFS_SECONDARYNAMENODE_USER=<span class="string">"root"</span></span><br><span class="line"><span class="built_in">export</span> YARN_RESOURCEMANAGER_USER=<span class="string">"root"</span></span><br><span class="line"><span class="built_in">export</span> YARN_NODEMANAGER_USER=<span class="string">"root"</span></span><br></pre></td></tr></table></figure>
+</code></pre><img src="/HXHBlog.github.io/2019/05/11/HBase安装步骤/3.jpg">
+<!-- ![](HBase安装步骤/3.jpg) -->
+<h2 id="10-再次-start-all-sh提示没有配置JAVA-HOME"><a href="#10-再次-start-all-sh提示没有配置JAVA-HOME" class="headerlink" title="10.再次./start-all.sh提示没有配置JAVA_HOME"></a>10.再次./start-all.sh提示没有配置JAVA_HOME</h2><img src="/HXHBlog.github.io/2019/05/11/HBase安装步骤/4.jpg">
+<!-- ![](HBase安装步骤/4.jpg) -->
+<pre><code>进入/usr/storm/hadoop/etc/hadoop目录修改hadoop-env.sh
+vim ../etc/hadoop/hadoop-env.sh
+写入javahome
+</code></pre><img src="/HXHBlog.github.io/2019/05/11/HBase安装步骤/5.jpg">
+<!-- ![](HBase安装步骤/5.jpg) -->
+<pre><code>nano ../etc/hadoop/hadoop-env.sh  也可以写入javahome，ssh不会提示要激活
+</code></pre><h2 id="11-进入-usr-storm-hadoop-sbin文件夹-输入-start-all-sh"><a href="#11-进入-usr-storm-hadoop-sbin文件夹-输入-start-all-sh" class="headerlink" title="11.进入/usr/storm/hadoop/sbin文件夹 输入 ./start-all.sh"></a>11.进入/usr/storm/hadoop/sbin文件夹 输入 ./start-all.sh</h2><pre><code>成功启动单机模式
+</code></pre><img src="/HXHBlog.github.io/2019/05/11/HBase安装步骤/6.jpg">
+<!-- ![](HBase安装步骤/6.jpg) -->
+<h2 id="12-配置Hadoop集群（和第7步结合）"><a href="#12-配置Hadoop集群（和第7步结合）" class="headerlink" title="12.配置Hadoop集群（和第7步结合）"></a>12.配置Hadoop集群（和第7步结合）</h2><pre><code> （1）按照上述做法（第七步配置四个xml文件，每个文件都不同），
+         使得每个节点都是一个主节点（这种做法是错误的）
+ （2）五台节点的    /usr/storm/hadoop/etc/hadoop   中的
+         core-site.xml、hdfs-site.xml、mapred-site.xml和yarn-site.xml
+         文件都应该是相同的（先配置好一台，将整个Hadoop文件夹复制到其他四台上即可）、
+ （3）配置好这四个文件（一个节点上配置好直接复制到其他节点），再在workers文件写入
+         storm-2/3/4/5（每个节点都要这样配置）
+ （4）最后启动Hadoop集群，在主节点上启动，jps查看从节点，出现datanode证明集群配置成功
+  注意：配置文件中最好不要用localhost，直接用节点名字
+
+注：创建Hadoop用户应该不需要
+</code></pre><h1 id="二、安装HBASE"><a href="#二、安装HBASE" class="headerlink" title="二、安装HBASE"></a>二、安装HBASE</h1><pre><code>同上，先下载安装包并解压
+hbase-2.1.0文件夹改名为hbase（不是必需步骤）
+</code></pre><h2 id="1-在-etc-profile中配置好hbase的环境变量，然后source激活"><a href="#1-在-etc-profile中配置好hbase的环境变量，然后source激活" class="headerlink" title="1.在/etc/profile中配置好hbase的环境变量，然后source激活"></a>1.在/etc/profile中配置好hbase的环境变量，然后source激活</h2><h2 id="2-配置-usr-storm-hbase-conf-hbase-site-xml文件"><a href="#2-配置-usr-storm-hbase-conf-hbase-site-xml文件" class="headerlink" title="2.配置/usr/storm/hbase/conf hbase-site.xml文件"></a>2.配置/usr/storm/hbase/conf hbase-site.xml文件</h2><img src="/HXHBlog.github.io/2019/05/11/HBase安装步骤/7.jpg">
+<!-- ![](HBase安装步骤/7.jpg) -->
+<h2 id="3-配置-usr-storm-hbase-conf-hbase-env-sh文件，导入："><a href="#3-配置-usr-storm-hbase-conf-hbase-env-sh文件，导入：" class="headerlink" title="3.配置/usr/storm/hbase/conf hbase-env.sh文件，导入："></a>3.配置/usr/storm/hbase/conf hbase-env.sh文件，导入：</h2><pre><code>#Java环境
+export JAVA_HOME=/usr/storm/jdk1.8.0
+#使用HBASE自带的zookeeper管理集群
+export HBASE_MANAGES_ZK=true
+</code></pre><h2 id="4-配置-usr-storm-hbase-conf-regionservers文件"><a href="#4-配置-usr-storm-hbase-conf-regionservers文件" class="headerlink" title="4.配置/usr/storm/hbase/conf regionservers文件"></a>4.配置/usr/storm/hbase/conf regionservers文件</h2><img src="/HXHBlog.github.io/2019/05/11/HBase安装步骤/8.jpg">
+<!-- ![](HBase安装步骤/8.jpg) -->
+<h2 id="5-将主节点配置好的hbase文件夹整个复制到其他节点上"><a href="#5-将主节点配置好的hbase文件夹整个复制到其他节点上" class="headerlink" title="5.将主节点配置好的hbase文件夹整个复制到其他节点上"></a>5.将主节点配置好的hbase文件夹整个复制到其他节点上</h2><pre><code>scp -r /usr/storm/hbase storm-2:/usr/storm/
+</code></pre><h2 id="6-启动：-进入hbase的bin文件夹下-start-hbase-sh"><a href="#6-启动：-进入hbase的bin文件夹下-start-hbase-sh" class="headerlink" title="6.启动： 进入hbase的bin文件夹下   ./start-hbase.sh"></a>6.启动： 进入hbase的bin文件夹下   ./start-hbase.sh</h2><pre><code>注意：hbase-site.xml里面的文字格式（字体大小等）不要改变，否则
+</code></pre><img src="/HXHBlog.github.io/2019/05/11/HBase安装步骤/9.jpg">
+<!-- ![](HBase安装步骤/9.jpg) -->
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/HXHBlog.github.io/2019/05/07/hello-world/" rel="next" title="GitHub+Hexo搭建个人网站">
+                <i class="fa fa-chevron-left"></i> GitHub+Hexo搭建个人网站
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/HXHBlog.github.io/2019/05/11/EdgeComputing/" rel="prev" title="EdgeComputing">
+                EdgeComputing <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/HXHBlog.github.io/images/avatar.png" alt="Xinhao Huang">
+            
+              <p class="site-author-name" itemprop="name">Xinhao Huang</p>
+              <p class="site-description motion-element" itemprop="description">翻山而歌</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/HXHBlog.github.io/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、安装HBase之前先安装Hadoop"><span class="nav-number">1.</span> <span class="nav-text">一、安装HBase之前先安装Hadoop</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-下载Hadoop压缩包"><span class="nav-number">1.1.</span> <span class="nav-text">1.下载Hadoop压缩包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-cd-usr-storm"><span class="nav-number">1.2.</span> <span class="nav-text">2.cd /usr/storm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-创建hadoop用户"><span class="nav-number">1.3.</span> <span class="nav-text">3.创建hadoop用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-sudo-mv-usr-storm-hadoop-3-1-1-usr-storm-hadoop-将文件夹名改为hadoop"><span class="nav-number">1.4.</span> <span class="nav-text">4.$ sudo mv /usr/storm/hadoop-3.1.1/  /usr/storm/hadoop # 将文件夹名改为hadoop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-环境变量"><span class="nav-number">1.5.</span> <span class="nav-text">5.环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-测试是否安装成功"><span class="nav-number">1.6.</span> <span class="nav-text">6.测试是否安装成功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-配置集群-分布式环境"><span class="nav-number">1.7.</span> <span class="nav-text">7.配置集群/分布式环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-进入-usr-storm-hadoop-sbin-start-all-sh"><span class="nav-number">1.8.</span> <span class="nav-text">8.进入/usr/storm/hadoop/sbin       ./start-all.sh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-命令行直接写入变量"><span class="nav-number">1.9.</span> <span class="nav-text">9.命令行直接写入变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-再次-start-all-sh提示没有配置JAVA-HOME"><span class="nav-number">1.10.</span> <span class="nav-text">10.再次./start-all.sh提示没有配置JAVA_HOME</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-进入-usr-storm-hadoop-sbin文件夹-输入-start-all-sh"><span class="nav-number">1.11.</span> <span class="nav-text">11.进入/usr/storm/hadoop/sbin文件夹 输入 ./start-all.sh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-配置Hadoop集群（和第7步结合）"><span class="nav-number">1.12.</span> <span class="nav-text">12.配置Hadoop集群（和第7步结合）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、安装HBASE"><span class="nav-number">2.</span> <span class="nav-text">二、安装HBASE</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-在-etc-profile中配置好hbase的环境变量，然后source激活"><span class="nav-number">2.1.</span> <span class="nav-text">1.在/etc/profile中配置好hbase的环境变量，然后source激活</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置-usr-storm-hbase-conf-hbase-site-xml文件"><span class="nav-number">2.2.</span> <span class="nav-text">2.配置/usr/storm/hbase/conf hbase-site.xml文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-配置-usr-storm-hbase-conf-hbase-env-sh文件，导入："><span class="nav-number">2.3.</span> <span class="nav-text">3.配置/usr/storm/hbase/conf hbase-env.sh文件，导入：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-配置-usr-storm-hbase-conf-regionservers文件"><span class="nav-number">2.4.</span> <span class="nav-text">4.配置/usr/storm/hbase/conf regionservers文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-将主节点配置好的hbase文件夹整个复制到其他节点上"><span class="nav-number">2.5.</span> <span class="nav-text">5.将主节点配置好的hbase文件夹整个复制到其他节点上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-启动：-进入hbase的bin文件夹下-start-hbase-sh"><span class="nav-number">2.6.</span> <span class="nav-text">6.启动： 进入hbase的bin文件夹下   ./start-hbase.sh</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xinhao Huang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/HXHBlog.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HXHBlog.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HXHBlog.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HXHBlog.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HXHBlog.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/HXHBlog.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/HXHBlog.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/HXHBlog.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/HXHBlog.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/HXHBlog.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/HXHBlog.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/HXHBlog.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/HXHBlog.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
