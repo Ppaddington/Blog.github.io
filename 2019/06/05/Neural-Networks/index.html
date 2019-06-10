@@ -79,18 +79,24 @@
 
 
 
-<meta name="description" content="感谢 GitHub 提供的 GitHub Pages，使得建立个人网站极其简单（尽管还是花了一个晚上+半个上午才搞好）。感谢 Hexo，浏览相关 documentation 可以了解更多信息。 先上教程教程一：如何搭建自己的个人网站如何搭建自己的个人网站（上） 教程二：GitHub+Hexo 搭建个人网站详细教程GitHub+Hexo 搭建个人网站详细教程">
+<meta name="description" content="为什么需要神经网络（Neural Networks）？&amp;emsp;&amp;emsp;无论是线性回归还是逻辑回归都有这样一个缺点，即：当特征太多时，计算的负荷会非常大。&amp;emsp;&amp;emsp;假设我们希望训练一个模型来识别视觉对象（例如识别一张图片上是否是一辆汽车），一种方法是我们利用很多汽车的图片和很多非汽车的图片，然后利用这些图片上一个个像素的值（饱和度或亮度）来作为特征。假使我们采用的都是 50x5">
 <meta name="keywords" content="git repository:git@github.com:Ppaddington&#x2F;Ppaddington.github.io git repository:git@github.com:Ppaddington&#x2F;Ppaddington.github.io">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GitHub+Hexo搭建个人网站">
-<meta property="og:url" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/07/hello-world/index.html">
+<meta property="og:title" content="Neural Networks">
+<meta property="og:url" content="https://ppaddington.github.io/Ppaddington.github.io/2019/06/05/Neural-Networks/index.html">
 <meta property="og:site_name" content="lalala">
-<meta property="og:description" content="感谢 GitHub 提供的 GitHub Pages，使得建立个人网站极其简单（尽管还是花了一个晚上+半个上午才搞好）。感谢 Hexo，浏览相关 documentation 可以了解更多信息。 先上教程教程一：如何搭建自己的个人网站如何搭建自己的个人网站（上） 教程二：GitHub+Hexo 搭建个人网站详细教程GitHub+Hexo 搭建个人网站详细教程">
+<meta property="og:description" content="为什么需要神经网络（Neural Networks）？&amp;emsp;&amp;emsp;无论是线性回归还是逻辑回归都有这样一个缺点，即：当特征太多时，计算的负荷会非常大。&amp;emsp;&amp;emsp;假设我们希望训练一个模型来识别视觉对象（例如识别一张图片上是否是一辆汽车），一种方法是我们利用很多汽车的图片和很多非汽车的图片，然后利用这些图片上一个个像素的值（饱和度或亮度）来作为特征。假使我们采用的都是 50x5">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-11T11:58:35.912Z">
+<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/06/05/Neural-Networks/1.jpg">
+<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/06/05/Neural-Networks/3.png">
+<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/06/05/Neural-Networks/2.png">
+<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/06/05/Neural-Networks/4.png">
+<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/06/05/Neural-Networks/5.png">
+<meta property="og:updated_time" content="2019-06-05T08:34:12.342Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GitHub+Hexo搭建个人网站">
-<meta name="twitter:description" content="感谢 GitHub 提供的 GitHub Pages，使得建立个人网站极其简单（尽管还是花了一个晚上+半个上午才搞好）。感谢 Hexo，浏览相关 documentation 可以了解更多信息。 先上教程教程一：如何搭建自己的个人网站如何搭建自己的个人网站（上） 教程二：GitHub+Hexo 搭建个人网站详细教程GitHub+Hexo 搭建个人网站详细教程">
+<meta name="twitter:title" content="Neural Networks">
+<meta name="twitter:description" content="为什么需要神经网络（Neural Networks）？&amp;emsp;&amp;emsp;无论是线性回归还是逻辑回归都有这样一个缺点，即：当特征太多时，计算的负荷会非常大。&amp;emsp;&amp;emsp;假设我们希望训练一个模型来识别视觉对象（例如识别一张图片上是否是一辆汽车），一种方法是我们利用很多汽车的图片和很多非汽车的图片，然后利用这些图片上一个个像素的值（饱和度或亮度）来作为特征。假使我们采用的都是 50x5">
+<meta name="twitter:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/06/05/Neural-Networks/1.jpg">
 
 
 
@@ -120,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://ppaddington.github.io/Ppaddington.github.io/2019/05/07/hello-world/">
+  <link rel="canonical" href="https://ppaddington.github.io/Ppaddington.github.io/2019/06/05/Neural-Networks/">
 
 
 
 
 
-  <title>GitHub+Hexo搭建个人网站 | lalala</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Neural Networks | lalala</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -243,7 +249,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ppaddington.github.io/Ppaddington.github.io/Ppaddington.github.io/2019/05/07/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://ppaddington.github.io/Ppaddington.github.io/Ppaddington.github.io/2019/06/05/Neural-Networks/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Xinhao Huang">
@@ -260,7 +266,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">GitHub+Hexo搭建个人网站</h1>
+          <h1 class="post-title" itemprop="name headline">Neural Networks</h1>
         
 
         <div class="post-meta">
@@ -272,8 +278,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-07T09:20:44+08:00">
-                2019-05-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-05T15:55:13+08:00">
+                2019-06-05
               </time>
             
 
@@ -288,8 +294,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-05-11T19:58:35+08:00">
-                2019-05-11
+              <time title="更新于" itemprop="dateModified" datetime="2019-06-05T16:34:12+08:00">
+                2019-06-05
               </time>
             
           </span>
@@ -316,7 +322,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  550
+                  935
                 </span>
               
 
@@ -332,7 +338,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -353,24 +359,10 @@
       
 
       
-        <p>感谢 <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> 提供的 GitHub Pages，使得建立个人网站极其简单（尽管还是花了一个晚上+半个上午才搞好）。<br>感谢 <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>，浏览相关 <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> 可以了解更多信息。</p>
-<h2 id="先上教程"><a href="#先上教程" class="headerlink" title="先上教程"></a>先上教程</h2><h3 id="教程一：如何搭建自己的个人网站"><a href="#教程一：如何搭建自己的个人网站" class="headerlink" title="教程一：如何搭建自己的个人网站"></a>教程一：如何搭建自己的个人网站</h3><p><a href="http://codewithzhangyi.com/2018/04/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%EF%BC%88%E4%B8%8A%EF%BC%89/" target="_blank" rel="noopener">如何搭建自己的个人网站（上）</a></p>
-<h3 id="教程二：GitHub-Hexo-搭建个人网站详细教程"><a href="#教程二：GitHub-Hexo-搭建个人网站详细教程" class="headerlink" title="教程二：GitHub+Hexo 搭建个人网站详细教程"></a>教程二：GitHub+Hexo 搭建个人网站详细教程</h3><p><a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">GitHub+Hexo 搭建个人网站详细教程</a></p>
-<a id="more"></a>
-<h2 id="说说踩的坑"><a href="#说说踩的坑" class="headerlink" title="说说踩的坑"></a>说说踩的坑</h2><h3 id="hexo命令"><a href="#hexo命令" class="headerlink" title="hexo命令"></a>hexo命令</h3><p>假设此时你已经建好了 Git 仓库，装好了 Hexo 并修改了其 _config.yml 文件。</p>
-<ol>
-<li>首先初始化 Hexo，此时最好指定一个文件夹 folder，如果没有设置 folder，Hexo 默认在目前的文件夹建立网站。并转到该目录（cd floder）。</li>
-<li>然后新建一篇文章，假设文章名为”new_article”。此时若启动服务器（hexo s），本地（localhost:4000）页面会出现这篇文章（/source/_post 目录下新建了 new_article.md 文件），但是还没有生成该文章的静态文件（可理解为还没有生成该文章对应的HTML文件）。建议在编写过程中打开本地服务，边写边看效果。</li>
-<li>通过 hexo g 命令生成静态文件。此时 public 文件夹下以年月日命名的文件夹下便会生成对应文章（new_article.md）的HTML文件（index.html）。</li>
-<li>通过 hexo d 命令将项目同步到 GitHub 。然后就可以在对应的网址上看见完整的博客内容了。</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init [folder]</span><br><span class="line">$ hexo new <span class="string">"new_article"</span></span><br><span class="line">$ hexo s</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo 文档</a></p>
-<h3 id="config-yml文件配置"><a href="#config-yml文件配置" class="headerlink" title="_config.yml文件配置"></a>_config.yml文件配置</h3><p>_config.yml具体配置信息参考<a href="http://www.mashangxue123.com/Hexo/982564298.html" target="_blank" rel="noopener">Hexo 系列之 _config.yml站点配置文件</a>。<br>特别想提一下 url 的配置问题，半个上午的时间基本耗在这一步……  ↓<br>参考<a href="https://blog.csdn.net/banjw_129/article/details/82261165" target="_blank" rel="noopener">hexo + github pages搭建博客样式加载不出来</a>，成功找到问题所在。</p>
-<h2 id="几点注意"><a href="#几点注意" class="headerlink" title="几点注意"></a>几点注意</h2><ul>
-<li>用markdawn语法写 \source\_posts 文件夹下的 md 文件，然后hexo g 、d，不要直接修改 \public\2019\05\07 下的 index.html 文件，index.html文件会随md文件的改变而改变。</li>
-<li>不要试图去手工改动 public 文件夹中的内容，public 文件夹是 hexo g 产生的。</li>
-</ul>
+        <h1 id="为什么需要神经网络（Neural-Networks）？"><a href="#为什么需要神经网络（Neural-Networks）？" class="headerlink" title="为什么需要神经网络（Neural Networks）？"></a>为什么需要神经网络（Neural Networks）？</h1><p>&emsp;&emsp;无论是线性回归还是逻辑回归都有这样一个缺点，即：当特征太多时，计算的负荷会非常大。<br>&emsp;&emsp;假设我们希望训练一个模型来识别视觉对象（例如识别一张图片上是否是一辆汽车），一种方法是我们利用很多汽车的图片和很多非汽车的图片，然后利用这些图片上一个个像素的值（饱和度或亮度）来作为特征。假使我们采用的都是 50x50 像素的小图片，并且我们将所有的像素视为特征，则会有 2500 个特征，如果我们要进一步将两两特征组合构成一个多项式模型，则会有约$ \frac {2500^2}{2} $个（接近 3 百万个）特征。普通的逻辑回归模型，不能有效地处理这么多的特征，这时候我们需要神经网络。</p>
+<h1 id="什么是神经网络？"><a href="#什么是神经网络？" class="headerlink" title="什么是神经网络？"></a>什么是神经网络？</h1><h3 id="模型表示-1"><a href="#模型表示-1" class="headerlink" title="模型表示 1"></a>模型表示 1</h3><p>&emsp;&emsp;神经网络是一种很古老的算法，它最初产生的目的是制造能模拟大脑的机器。<br>&emsp;&emsp;为了构建神经网络模型，我们需要首先思考大脑中的神经网络是怎样的？每一个神经元都可以被认为是一个处理单元/神经核（processing unit/Nucleus），它含有许多输入/树突（input/Dendrite），并且有一个输出/轴突（output/Axon）。神经网络是大量神经元相互链接并通过电脉冲来交流的一个网络。<br><img src="/Ppaddington.github.io/2019/06/05/Neural-Networks/1.jpg"><br>&emsp;&emsp;上图是一组神经元的示意图，神经元利用微弱的电流进行沟通。这些弱电流也称作动作电位，其实就是一些微弱的电流。所以如果神经元想要传递一个消息，它就会就通过它的轴突，发送一段微弱电流给其他神经元，这就是轴突。</p>
+<p>&emsp;&emsp;神经网络模型建立在很多神经元之上，每一个神经元又是一个个学习模型。这些神经元（也叫激活单元，activation unit）采纳一些特征作为输出，并且根据本身的模型提供一个输出。下图是一个以逻辑回归模型作为自身学习模型的神经元示例，在神经网络中，参数又可被成为权重（weight）。<br><img src="/Ppaddington.github.io/2019/06/05/Neural-Networks/3.png"><br>&emsp;&emsp;我们设计出了类似于神经元的神经网络，效果如下：<br><img src="/Ppaddington.github.io/2019/06/05/Neural-Networks/2.png"><br>&emsp;&emsp;其中 $ 𝑥_1, 𝑥_2, 𝑥_3 $ 是输入单元（input units），我们将原始数据输入给它们。 $ 𝑎_1, 𝑎_2, 𝑎_3 $ 是中间单元，它们负责将数据进行处理，然后呈递到下一层。最后是输出单元，它负责计算 $ ℎ_𝜃(𝑥) $。</p>
+<p>&emsp;&emsp;神经网络模型是许多逻辑单元按照不同层级组织起来的网络，每一层的输出变量都是下一层的输入变量。下图为一个 3 层的神经网络，第一层成为输入层（Input Layer），最后一层称为输出层（Output Layer），中间一层成为隐藏层（Hidden Layers）。我们为每一层都增加一个偏差单位（bias unit）：<br><img src="/Ppaddington.github.io/2019/06/05/Neural-Networks/4.png"><br>&emsp;&emsp;$ 𝑎_𝑖^{(𝑗)} $ 代表第𝑗 层的第 𝑖 个激活单元。$ 𝑎^{(𝑗)} $ 代表从第 𝑗 层映射到第 𝑗 + 1 层时的权重的矩阵，例如$ 𝜃^{(1)} $代表从第一层映射到第二层的权重的矩阵。其尺寸为：以第 𝑗 + 1 层的激活单元数量为行数，以第 𝑗 层的激活单元数加一为列数的矩阵。例如：上图所示的神经网络中 $ 𝜃^{(1)} $ 的尺寸为 3*4。对于上图所示的模型，激活单元和输出分别表达为：<br><img src="/Ppaddington.github.io/2019/06/05/Neural-Networks/5.png"></p>
 
       
     </div>
@@ -395,15 +387,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/Ppaddington.github.io/2019/05/28/Regularization/" rel="next" title="Regularization">
+                <i class="fa fa-chevron-left"></i> Regularization
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Ppaddington.github.io/2019/05/11/HBase安装步骤/" rel="prev" title="HBase安装步骤">
-                HBase安装步骤 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -520,7 +512,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#先上教程"><span class="nav-number">1.</span> <span class="nav-text">先上教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#教程一：如何搭建自己的个人网站"><span class="nav-number">1.1.</span> <span class="nav-text">教程一：如何搭建自己的个人网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#教程二：GitHub-Hexo-搭建个人网站详细教程"><span class="nav-number">1.2.</span> <span class="nav-text">教程二：GitHub+Hexo 搭建个人网站详细教程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#说说踩的坑"><span class="nav-number">2.</span> <span class="nav-text">说说踩的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo命令"><span class="nav-number">2.1.</span> <span class="nav-text">hexo命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#config-yml文件配置"><span class="nav-number">2.2.</span> <span class="nav-text">_config.yml文件配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#几点注意"><span class="nav-number">3.</span> <span class="nav-text">几点注意</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么需要神经网络（Neural-Networks）？"><span class="nav-number">1.</span> <span class="nav-text">为什么需要神经网络（Neural Networks）？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是神经网络？"><span class="nav-number">2.</span> <span class="nav-text">什么是神经网络？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型表示-1"><span class="nav-number">2.0.1.</span> <span class="nav-text">模型表示 1</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -711,7 +703,7 @@
   
 
 
-  <script type="text/javascript" src="/Ppaddington.github.io/js/src/bootstrap.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script type="text/javascript" src="/Ppaddington.github.io/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
@@ -764,6 +756,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
