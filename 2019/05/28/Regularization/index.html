@@ -87,15 +87,15 @@
 <meta property="og:site_name" content="lalala">
 <meta property="og:description" content="过拟合(over-fitting)问题什么是过拟合问题？&amp;emsp;&amp;emsp;过拟合指的是模型虽然很好地适应了训练集，但是对新输入的变量进行预测时效果可能很差，模型泛化能力不好。&amp;emsp;&amp;emsp;下图是一个回归问题的例子，第一幅图表示欠拟合的情况，模型不能很好地适应训练集；第三幅图虽然能非常好地适应训练集，但若给出一个新的值使之预测，它将表现的很差；而中间的模型最合适。&amp;emsp;&amp;ems">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ppaddington.github.io/HXHBlog.github.io/2019/05/28/Regularization/1.png">
-<meta property="og:image" content="https://ppaddington.github.io/HXHBlog.github.io/2019/05/28/Regularization/2.png">
-<meta property="og:image" content="https://ppaddington.github.io/HXHBlog.github.io/2019/05/28/Regularization/4.png">
-<meta property="og:image" content="https://ppaddington.github.io/HXHBlog.github.io/2019/05/28/Regularization/3.png">
+<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/1.png">
+<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/2.png">
+<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/4.png">
+<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/3.png">
 <meta property="og:updated_time" content="2019-05-29T03:40:12.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Regularization">
 <meta name="twitter:description" content="过拟合(over-fitting)问题什么是过拟合问题？&amp;emsp;&amp;emsp;过拟合指的是模型虽然很好地适应了训练集，但是对新输入的变量进行预测时效果可能很差，模型泛化能力不好。&amp;emsp;&amp;emsp;下图是一个回归问题的例子，第一幅图表示欠拟合的情况，模型不能很好地适应训练集；第三幅图虽然能非常好地适应训练集，但若给出一个新的值使之预测，它将表现的很差；而中间的模型最合适。&amp;emsp;&amp;ems">
-<meta name="twitter:image" content="https://ppaddington.github.io/HXHBlog.github.io/2019/05/28/Regularization/1.png">
+<meta name="twitter:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/1.png">
 
 
 
@@ -358,13 +358,13 @@
       
 
       
-        <h1 id="过拟合-over-fitting-问题"><a href="#过拟合-over-fitting-问题" class="headerlink" title="过拟合(over-fitting)问题"></a>过拟合(over-fitting)问题</h1><h4 id="什么是过拟合问题？"><a href="#什么是过拟合问题？" class="headerlink" title="什么是过拟合问题？"></a>什么是过拟合问题？</h4><p>&emsp;&emsp;过拟合指的是模型虽然很好地适应了训练集，但是对新输入的变量进行预测时效果可能很差，模型泛化能力不好。<br>&emsp;&emsp;下图是一个回归问题的例子，第一幅图表示欠拟合的情况，模型不能很好地适应训练集；第三幅图虽然能非常好地适应训练集，但若给出一个新的值使之预测，它将表现的很差；而中间的模型最合适。<br>&emsp;&emsp;模型的泛化能力是指，在给出新的数据时，模型是否能够给出准确的预测结果。<br><img src="/HXHBlog.github.io/2019/05/28/Regularization/1.png"></p>
+        <h1 id="过拟合-over-fitting-问题"><a href="#过拟合-over-fitting-问题" class="headerlink" title="过拟合(over-fitting)问题"></a>过拟合(over-fitting)问题</h1><h4 id="什么是过拟合问题？"><a href="#什么是过拟合问题？" class="headerlink" title="什么是过拟合问题？"></a>什么是过拟合问题？</h4><p>&emsp;&emsp;过拟合指的是模型虽然很好地适应了训练集，但是对新输入的变量进行预测时效果可能很差，模型泛化能力不好。<br>&emsp;&emsp;下图是一个回归问题的例子，第一幅图表示欠拟合的情况，模型不能很好地适应训练集；第三幅图虽然能非常好地适应训练集，但若给出一个新的值使之预测，它将表现的很差；而中间的模型最合适。<br>&emsp;&emsp;模型的泛化能力是指，在给出新的数据时，模型是否能够给出准确的预测结果。<br><img src="/Ppaddington.github.io/2019/05/28/Regularization/1.png"></p>
 <a id="more"></a>
 <h4 id="如何解决过拟合问题？"><a href="#如何解决过拟合问题？" class="headerlink" title="如何解决过拟合问题？"></a>如何解决过拟合问题？</h4><ol>
 <li>减少特征数量<br>&emsp;&emsp;丢弃一些不能帮助我们正确预测的特征。可以是手工选择保留哪些特征，或者使用一些模型选择的算法来帮忙。</li>
 <li>正则化<br>&emsp;&emsp;保留所有的特征，但是减少参数的大小。</li>
 </ol>
-<h1 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h1><p>&emsp;&emsp;对于一个如图所示的回归问题，假设模型为：$ ℎ_𝜃(𝑥) = 𝜃_0 + 𝜃_1𝑥 + 𝜃_2𝑥^2 + 𝜃_3𝑥^3 + 𝜃_4𝑥^4 $，由上文可知，由于高次项导致过拟合，如果我们让这些高次项的系数接近于 0 的话，那么就会产生比较好的效果。<br><img src="/HXHBlog.github.io/2019/05/28/Regularization/2.png"><br>&emsp;&emsp;正则化的思想：通过加入惩罚项来缩小参数（θ），从而使高次项的系数接近于0。<br>&emsp;&emsp;也就是说，如果你用高阶多项式拟合数据，同时又想保留所有特征的高阶项，正则化就派上用场了。<br>&emsp;&emsp;对代价函数加入正则项：$ J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^n θ_j^2 ] $ 。<br>&emsp;&emsp;λ称为正则化参数，它的作用是平衡代价函数的第一项($ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 $)和第二项($ λ \sum_{j=1}^n θ_j^2 $)，使第一项能够更好地拟合训练数据，同时使得第二项尽量小不致产生过拟合问题。效果如图：<br><img src="/HXHBlog.github.io/2019/05/28/Regularization/4.png"><br>&emsp;&emsp;要注意正则化参数λ的选取，如果选取的λ过大，则对$ 𝜃_1 𝜃_2 𝜃_3 𝜃_4 $的惩罚程度过大，这就导致$ 𝜃_1 𝜃_2 𝜃_3 𝜃_4 $的取值几乎为0，从而导致$ ℎ_𝜃(𝑥) ≈ 𝜃_0 $，模型成为一条水平直线，这显然十分糟糕。所以我们应当给λ选择一个合适的值。<br><img src="/HXHBlog.github.io/2019/05/28/Regularization/3.png"></p>
+<h1 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h1><p>&emsp;&emsp;对于一个如图所示的回归问题，假设模型为：$ ℎ_𝜃(𝑥) = 𝜃_0 + 𝜃_1𝑥 + 𝜃_2𝑥^2 + 𝜃_3𝑥^3 + 𝜃_4𝑥^4 $，由上文可知，由于高次项导致过拟合，如果我们让这些高次项的系数接近于 0 的话，那么就会产生比较好的效果。<br><img src="/Ppaddington.github.io/2019/05/28/Regularization/2.png"><br>&emsp;&emsp;正则化的思想：通过加入惩罚项来缩小参数（θ），从而使高次项的系数接近于0。<br>&emsp;&emsp;也就是说，如果你用高阶多项式拟合数据，同时又想保留所有特征的高阶项，正则化就派上用场了。<br>&emsp;&emsp;对代价函数加入正则项：$ J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^n θ_j^2 ] $ 。<br>&emsp;&emsp;λ称为正则化参数，它的作用是平衡代价函数的第一项($ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 $)和第二项($ λ \sum_{j=1}^n θ_j^2 $)，使第一项能够更好地拟合训练数据，同时使得第二项尽量小不致产生过拟合问题。效果如图：<br><img src="/Ppaddington.github.io/2019/05/28/Regularization/4.png"><br>&emsp;&emsp;要注意正则化参数λ的选取，如果选取的λ过大，则对$ 𝜃_1 𝜃_2 𝜃_3 𝜃_4 $的惩罚程度过大，这就导致$ 𝜃_1 𝜃_2 𝜃_3 𝜃_4 $的取值几乎为0，从而导致$ ℎ_𝜃(𝑥) ≈ 𝜃_0 $，模型成为一条水平直线，这显然十分糟糕。所以我们应当给λ选择一个合适的值。<br><img src="/Ppaddington.github.io/2019/05/28/Regularization/3.png"></p>
 <h1 id="正则化线性回归"><a href="#正则化线性回归" class="headerlink" title="正则化线性回归"></a>正则化线性回归</h1><p>&emsp;&emsp;正则化线性回归的代价函数为：</p>
 <script type="math/tex; mode=display">
 J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^n θ_j^2 ]</script><p>&emsp;&emsp;如果我们要使用梯度下降法令这个代价函数最小化，因为我们未对$ 𝜃_0 $进行正则化，所以梯度下降算法将分两种情形(忘记梯度下降复习线性回归一节)：</p>
