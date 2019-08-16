@@ -10,6 +10,8 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 <meta name="theme-color" content="#222">
 
 
@@ -68,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="机器学习,">
 
 
 
@@ -80,7 +82,7 @@
 
 
 <meta name="description" content="单变量线性回归描述回归问题的标记如下&amp;emsp;&amp;emsp;𝑚 代表训练集中实例的数量&amp;emsp;&amp;emsp;𝑥 代表特征/输入变量&amp;emsp;&amp;emsp;𝑦 代表目标变量/输出变量&amp;emsp;&amp;emsp;(𝑥, 𝑦) 代表训练集中的实例&amp;emsp;&amp;emsp;$(𝑥^{(𝑖)}, 𝑦^{(𝑖)}) $代表第𝑖 个观察实例&amp;emsp;&amp;emsp;ℎ 代表学习算法的解决方案或函数">
-<meta name="keywords" content="git repository:git@github.com:Ppaddington&#x2F;Ppaddington.github.io git repository:git@github.com:Ppaddington&#x2F;Ppaddington.github.io">
+<meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linear Regression">
 <meta property="og:url" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/15/Linear-Regression/index.html">
@@ -97,7 +99,7 @@
 <meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/15/Linear-Regression/8.png">
 <meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/15/Linear-Regression/9.png">
 <meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/15/Linear-Regression/10.png">
-<meta property="og:updated_time" content="2019-05-29T03:49:31.640Z">
+<meta property="og:updated_time" content="2019-08-15T10:09:50.422Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linear Regression">
 <meta name="twitter:description" content="单变量线性回归描述回归问题的标记如下&amp;emsp;&amp;emsp;𝑚 代表训练集中实例的数量&amp;emsp;&amp;emsp;𝑥 代表特征/输入变量&amp;emsp;&amp;emsp;𝑦 代表目标变量/输出变量&amp;emsp;&amp;emsp;(𝑥, 𝑦) 代表训练集中的实例&amp;emsp;&amp;emsp;$(𝑥^{(𝑖)}, 𝑦^{(𝑖)}) $代表第𝑖 个观察实例&amp;emsp;&amp;emsp;ℎ 代表学习算法的解决方案或函数">
@@ -212,6 +214,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/Ppaddington.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/Ppaddington.github.io/archives/" rel="section">
             
@@ -257,7 +269,7 @@
     <link itemprop="mainEntityOfPage" href="https://ppaddington.github.io/Ppaddington.github.io/Ppaddington.github.io/2019/05/15/Linear-Regression/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinhao Huang">
+      <meta itemprop="name" content="lalala">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/Ppaddington.github.io/images/avatar.png">
     </span>
@@ -299,8 +311,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-05-29T11:49:31+08:00">
-                2019-05-29
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-15T18:09:50+08:00">
+                2019-08-15
               </time>
             
           </span>
@@ -407,6 +419,12 @@ J(θ_0,θ_1,...,θ_n) =  \frac{1}{2m} \sum_{i=1}^m (ℎ_𝜃(x^{(𝑖)}) − y^{
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/Ppaddington.github.io/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          
+        </div>
+      
 
       
       
@@ -494,9 +512,9 @@ J(θ_0,θ_1,...,θ_n) =  \frac{1}{2m} \sum_{i=1}^m (ℎ_𝜃(x^{(𝑖)}) − y^{
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/Ppaddington.github.io/images/avatar.png" alt="Xinhao Huang">
+              <img class="site-author-image" itemprop="image" src="/Ppaddington.github.io/images/avatar.png" alt="lalala">
             
-              <p class="site-author-name" itemprop="name">Xinhao Huang</p>
+              <p class="site-author-name" itemprop="name">lalala</p>
               <p class="site-description motion-element" itemprop="description">翻山而歌</p>
           </div>
 
@@ -507,7 +525,7 @@ J(θ_0,θ_1,...,θ_n) =  \frac{1}{2m} \sum_{i=1}^m (ℎ_𝜃(x^{(𝑖)}) − y^{
               
                 <a href="/Ppaddington.github.io/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -515,6 +533,15 @@ J(θ_0,θ_1,...,θ_n) =  \frac{1}{2m} \sum_{i=1}^m (ℎ_𝜃(x^{(𝑖)}) − y^{
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/Ppaddington.github.io/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
@@ -569,7 +596,7 @@ J(θ_0,θ_1,...,θ_n) =  \frac{1}{2m} \sum_{i=1}^m (ℎ_𝜃(x^{(𝑖)}) − y^{
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Xinhao Huang</span>
+  <span class="author" itemprop="copyrightHolder">lalala</span>
 
   
     <span class="post-meta-divider">|</span>
@@ -579,12 +606,14 @@ J(θ_0,θ_1,...,θ_n) =  \frac{1}{2m} \sum_{i=1}^m (ℎ_𝜃(x^{(𝑖)}) − y^{
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">9.5k</span>
+    <span title="Site words total count">14.8k</span>
   
 </div>
 
+<!--
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
 
 
 
@@ -592,8 +621,10 @@ J(θ_0,θ_1,...,θ_n) =  \frac{1}{2m} \sum_{i=1}^m (ℎ_𝜃(x^{(𝑖)}) − y^{
 
 
 
+
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
+-->
 
 
 
@@ -808,7 +839,7 @@ J(θ_0,θ_1,...,θ_n) =  \frac{1}{2m} \sum_{i=1}^m (ℎ_𝜃(x^{(𝑖)}) − y^{
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
@@ -816,5 +847,5 @@ J(θ_0,θ_1,...,θ_n) =  \frac{1}{2m} \sum_{i=1}^m (ℎ_𝜃(x^{(𝑖)}) − y^{
 
   
 
-</body>
+<script src="/Ppaddington.github.io/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/Ppaddington.github.io/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

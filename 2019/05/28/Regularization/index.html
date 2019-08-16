@@ -10,6 +10,8 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 <meta name="theme-color" content="#222">
 
 
@@ -68,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="机器学习,">
 
 
 
@@ -80,7 +82,7 @@
 
 
 <meta name="description" content="过拟合(over-fitting)问题什么是过拟合问题？&amp;emsp;&amp;emsp;过拟合指的是模型虽然很好地适应了训练集，但是对新输入的变量进行预测时效果可能很差，模型泛化能力不好。&amp;emsp;&amp;emsp;下图是一个回归问题的例子，第一幅图表示欠拟合的情况，模型不能很好地适应训练集；第三幅图虽然能非常好地适应训练集，但若给出一个新的值使之预测，它将表现的很差；而中间的模型最合适。&amp;emsp;&amp;ems">
-<meta name="keywords" content="git repository:git@github.com:Ppaddington&#x2F;Ppaddington.github.io git repository:git@github.com:Ppaddington&#x2F;Ppaddington.github.io">
+<meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Regularization">
 <meta property="og:url" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/index.html">
@@ -91,7 +93,7 @@
 <meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/2.png">
 <meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/4.png">
 <meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/3.png">
-<meta property="og:updated_time" content="2019-05-29T03:40:12.865Z">
+<meta property="og:updated_time" content="2019-08-15T10:09:41.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Regularization">
 <meta name="twitter:description" content="过拟合(over-fitting)问题什么是过拟合问题？&amp;emsp;&amp;emsp;过拟合指的是模型虽然很好地适应了训练集，但是对新输入的变量进行预测时效果可能很差，模型泛化能力不好。&amp;emsp;&amp;emsp;下图是一个回归问题的例子，第一幅图表示欠拟合的情况，模型不能很好地适应训练集；第三幅图虽然能非常好地适应训练集，但若给出一个新的值使之预测，它将表现的很差；而中间的模型最合适。&amp;emsp;&amp;ems">
@@ -206,6 +208,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/Ppaddington.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/Ppaddington.github.io/archives/" rel="section">
             
@@ -251,7 +263,7 @@
     <link itemprop="mainEntityOfPage" href="https://ppaddington.github.io/Ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Xinhao Huang">
+      <meta itemprop="name" content="lalala">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/Ppaddington.github.io/images/avatar.png">
     </span>
@@ -293,8 +305,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-05-29T11:40:12+08:00">
-                2019-05-29
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-15T18:09:41+08:00">
+                2019-08-15
               </time>
             
           </span>
@@ -395,6 +407,12 @@ J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/Ppaddington.github.io/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
+          
+        </div>
+      
 
       
       
@@ -482,9 +500,9 @@ J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/Ppaddington.github.io/images/avatar.png" alt="Xinhao Huang">
+              <img class="site-author-image" itemprop="image" src="/Ppaddington.github.io/images/avatar.png" alt="lalala">
             
-              <p class="site-author-name" itemprop="name">Xinhao Huang</p>
+              <p class="site-author-name" itemprop="name">lalala</p>
               <p class="site-description motion-element" itemprop="description">翻山而歌</p>
           </div>
 
@@ -495,7 +513,7 @@ J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^
               
                 <a href="/Ppaddington.github.io/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -503,6 +521,15 @@ J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/Ppaddington.github.io/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
@@ -557,7 +584,7 @@ J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Xinhao Huang</span>
+  <span class="author" itemprop="copyrightHolder">lalala</span>
 
   
     <span class="post-meta-divider">|</span>
@@ -567,12 +594,14 @@ J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">9.5k</span>
+    <span title="Site words total count">14.8k</span>
   
 </div>
 
+<!--
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
 
 
 
@@ -580,8 +609,10 @@ J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^
 
 
 
+
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
+-->
 
 
 
@@ -796,7 +827,7 @@ J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
@@ -804,5 +835,5 @@ J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^
 
   
 
-</body>
+<script src="/Ppaddington.github.io/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/Ppaddington.github.io/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>
