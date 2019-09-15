@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="机器学习,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -81,23 +81,26 @@
 
 
 
-<meta name="description" content="过拟合(over-fitting)问题什么是过拟合问题？&amp;emsp;&amp;emsp;过拟合指的是模型虽然很好地适应了训练集，但是对新输入的变量进行预测时效果可能很差，模型泛化能力不好。&amp;emsp;&amp;emsp;下图是一个回归问题的例子，第一幅图表示欠拟合的情况，模型不能很好地适应训练集；第三幅图虽然能非常好地适应训练集，但若给出一个新的值使之预测，它将表现的很差；而中间的模型最合适。&amp;emsp;&amp;ems">
-<meta name="keywords" content="机器学习">
+<meta name="description" content="&amp;emsp;&amp;emsp;最近在学习李航的《统计学习方法》，有大神用python代码实现了书中算法，并将其用jupyter notebook的形式开源。由于本人的笔记本和实验室台式机经常分处两地，不方便来回同步，故想到将代码全部放到服务器上，这样无论何时何地均可访问。 准备工作&amp;emsp;&amp;emsp;在安装jupyter notebook之前需要电脑配置好Python环境，然后推荐使用pip安装ju">
+<meta name="keywords" content="git repository:git@github.com:Ppaddington&#x2F;Ppaddington.github.io git repository:git@github.com:Ppaddington&#x2F;Ppaddington.github.io">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Regularization">
-<meta property="og:url" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/index.html">
+<meta property="og:title" content="远程访问jupyter notebook">
+<meta property="og:url" content="https://ppaddington.github.io/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/index.html">
 <meta property="og:site_name" content="lalala">
-<meta property="og:description" content="过拟合(over-fitting)问题什么是过拟合问题？&amp;emsp;&amp;emsp;过拟合指的是模型虽然很好地适应了训练集，但是对新输入的变量进行预测时效果可能很差，模型泛化能力不好。&amp;emsp;&amp;emsp;下图是一个回归问题的例子，第一幅图表示欠拟合的情况，模型不能很好地适应训练集；第三幅图虽然能非常好地适应训练集，但若给出一个新的值使之预测，它将表现的很差；而中间的模型最合适。&amp;emsp;&amp;ems">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;最近在学习李航的《统计学习方法》，有大神用python代码实现了书中算法，并将其用jupyter notebook的形式开源。由于本人的笔记本和实验室台式机经常分处两地，不方便来回同步，故想到将代码全部放到服务器上，这样无论何时何地均可访问。 准备工作&amp;emsp;&amp;emsp;在安装jupyter notebook之前需要电脑配置好Python环境，然后推荐使用pip安装ju">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/1.png">
-<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/2.png">
-<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/4.png">
-<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/3.png">
-<meta property="og:updated_time" content="2019-08-15T10:09:41.287Z">
+<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/sha1.jpg">
+<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/config.jpg">
+<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/ip.jpg">
+<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/pwd.jpg">
+<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/browser.jpg">
+<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/port.jpg">
+<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/success.jpg">
+<meta property="og:updated_time" content="2019-09-15T05:50:14.619Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Regularization">
-<meta name="twitter:description" content="过拟合(over-fitting)问题什么是过拟合问题？&amp;emsp;&amp;emsp;过拟合指的是模型虽然很好地适应了训练集，但是对新输入的变量进行预测时效果可能很差，模型泛化能力不好。&amp;emsp;&amp;emsp;下图是一个回归问题的例子，第一幅图表示欠拟合的情况，模型不能很好地适应训练集；第三幅图虽然能非常好地适应训练集，但若给出一个新的值使之预测，它将表现的很差；而中间的模型最合适。&amp;emsp;&amp;ems">
-<meta name="twitter:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/1.png">
+<meta name="twitter:title" content="远程访问jupyter notebook">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;最近在学习李航的《统计学习方法》，有大神用python代码实现了书中算法，并将其用jupyter notebook的形式开源。由于本人的笔记本和实验室台式机经常分处两地，不方便来回同步，故想到将代码全部放到服务器上，这样无论何时何地均可访问。 准备工作&amp;emsp;&amp;emsp;在安装jupyter notebook之前需要电脑配置好Python环境，然后推荐使用pip安装ju">
+<meta name="twitter:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/sha1.jpg">
 
 
 
@@ -127,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="https://ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/">
+  <link rel="canonical" href="https://ppaddington.github.io/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/">
 
 
 
 
 
-  <title>Regularization | lalala</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>远程访问jupyter notebook | lalala</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -260,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ppaddington.github.io/Ppaddington.github.io/Ppaddington.github.io/2019/05/28/Regularization/">
+    <link itemprop="mainEntityOfPage" href="https://ppaddington.github.io/Ppaddington.github.io/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lalala">
@@ -277,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Regularization</h1>
+          <h1 class="post-title" itemprop="name headline">远程访问jupyter notebook</h1>
         
 
         <div class="post-meta">
@@ -289,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-28T11:09:00+08:00">
-                2019-05-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-15T12:50:42+08:00">
+                2019-09-15
               </time>
             
 
@@ -305,8 +308,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-15T18:09:41+08:00">
-                2019-08-15
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-15T13:50:14+08:00">
+                2019-09-15
               </time>
             
           </span>
@@ -333,7 +336,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k
+                  437
                 </span>
               
 
@@ -349,7 +352,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  1
                 </span>
               
             </div>
@@ -370,28 +373,26 @@
       
 
       
-        <h1 id="过拟合-over-fitting-问题"><a href="#过拟合-over-fitting-问题" class="headerlink" title="过拟合(over-fitting)问题"></a>过拟合(over-fitting)问题</h1><h4 id="什么是过拟合问题？"><a href="#什么是过拟合问题？" class="headerlink" title="什么是过拟合问题？"></a>什么是过拟合问题？</h4><p>&emsp;&emsp;过拟合指的是模型虽然很好地适应了训练集，但是对新输入的变量进行预测时效果可能很差，模型泛化能力不好。<br>&emsp;&emsp;下图是一个回归问题的例子，第一幅图表示欠拟合的情况，模型不能很好地适应训练集；第三幅图虽然能非常好地适应训练集，但若给出一个新的值使之预测，它将表现的很差；而中间的模型最合适。<br>&emsp;&emsp;模型的泛化能力是指，在给出新的数据时，模型是否能够给出准确的预测结果。<br><img src="/Ppaddington.github.io/2019/05/28/Regularization/1.png"></p>
+        <p>&emsp;&emsp;最近在学习李航的《统计学习方法》，有大神用python代码实现了书中算法，并将其用jupyter notebook的形式开源。由于本人的笔记本和实验室台式机经常分处两地，不方便来回同步，故想到将代码全部放到服务器上，这样无论何时何地均可访问。</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>&emsp;&emsp;在安装jupyter notebook之前需要电脑配置好Python环境，然后推荐使用pip安装jupyter notebook。<br>&emsp;&emsp;Python官网安装页面：<a href="https://www.python.org/downloads/release/python-374/" target="_blank" rel="noopener">https://www.python.org/downloads/release/python-374/</a>。由于我的服务器是Windows，故选择Windows x86-64 executable installer即可，以下默认服务器为Windows。然后 pip install jupyter即可。</p>
 <a id="more"></a>
-<h4 id="如何解决过拟合问题？"><a href="#如何解决过拟合问题？" class="headerlink" title="如何解决过拟合问题？"></a>如何解决过拟合问题？</h4><ol>
-<li>减少特征数量<br>&emsp;&emsp;丢弃一些不能帮助我们正确预测的特征。可以是手工选择保留哪些特征，或者使用一些模型选择的算法来帮忙。</li>
-<li>正则化<br>&emsp;&emsp;保留所有的特征，但是减少参数的大小。</li>
+<h3 id="jupyter-notebook配置文件"><a href="#jupyter-notebook配置文件" class="headerlink" title="jupyter notebook配置文件"></a>jupyter notebook配置文件</h3><p>&emsp;&emsp;服务器上用pip命令安装好jupyter notebook后，在cmd中输入jupyter notebook可正常访问，但用本地电脑访问 <a href="http://server_ip:8888" target="_blank" rel="noopener">http://server_ip:8888</a> ,发现无法访问，需要进行如下配置：</p>
+<ol>
+<li>首先在cmd中输入ipython生成秘钥<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ipython</span><br><span class="line">from notebook.auth import passwd</span><br><span class="line">passwd()</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h1 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h1><p>&emsp;&emsp;对于一个如图所示的回归问题，假设模型为：$ ℎ_𝜃(𝑥) = 𝜃_0 + 𝜃_1𝑥 + 𝜃_2𝑥^2 + 𝜃_3𝑥^3 + 𝜃_4𝑥^4 $，由上文可知，由于高次项导致过拟合，如果我们让这些高次项的系数接近于 0 的话，那么就会产生比较好的效果。<br><img src="/Ppaddington.github.io/2019/05/28/Regularization/2.png"><br>&emsp;&emsp;正则化的思想：通过加入惩罚项来缩小参数（θ），从而使高次项的系数接近于0。<br>&emsp;&emsp;也就是说，如果你用高阶多项式拟合数据，同时又想保留所有特征的高阶项，正则化就派上用场了。<br>&emsp;&emsp;对代价函数加入正则项：$ J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^n θ_j^2 ] $ 。<br>&emsp;&emsp;λ称为正则化参数，它的作用是平衡代价函数的第一项($ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 $)和第二项($ λ \sum_{j=1}^n θ_j^2 $)，使第一项能够更好地拟合训练数据，同时使得第二项尽量小不致产生过拟合问题。效果如图：<br><img src="/Ppaddington.github.io/2019/05/28/Regularization/4.png"><br>&emsp;&emsp;要注意正则化参数λ的选取，如果选取的λ过大，则对$ 𝜃_1 𝜃_2 𝜃_3 𝜃_4 $的惩罚程度过大，这就导致$ 𝜃_1 𝜃_2 𝜃_3 𝜃_4 $的取值几乎为0，从而导致$ ℎ_𝜃(𝑥) ≈ 𝜃_0 $，模型成为一条水平直线，这显然十分糟糕。所以我们应当给λ选择一个合适的值。<br><img src="/Ppaddington.github.io/2019/05/28/Regularization/3.png"></p>
-<h1 id="正则化线性回归"><a href="#正则化线性回归" class="headerlink" title="正则化线性回归"></a>正则化线性回归</h1><p>&emsp;&emsp;正则化线性回归的代价函数为：</p>
-<script type="math/tex; mode=display">
-J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^n θ_j^2 ]</script><p>&emsp;&emsp;如果我们要使用梯度下降法令这个代价函数最小化，因为我们未对$ 𝜃_0 $进行正则化，所以梯度下降算法将分两种情形(忘记梯度下降复习线性回归一节)：</p>
-<script type="math/tex; mode=display">
-    𝜃_0 := 𝜃_0 - α\sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})x_0^{(i)}</script><script type="math/tex; mode=display">
-    𝜃_j := 𝜃_j - α\sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})x_j^{(i)} +  \frac{λ}{m}𝜃_j</script><p>&emsp;&emsp;对上面的算法中 𝑗 = 1,2,…, 𝑛 时的更新式子进行调整可得：</p>
-<script type="math/tex; mode=display">
-𝜃_j := 𝜃_j(1 - α \frac{λ}{m}) - α\frac{1}{m} \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})x_j^{(i)}</script><p>&emsp;&emsp;可以看出，正则化线性回归的梯度下降算法的变化在于，每次都在原有算法更新规则的基础上令𝜃减少了一个额外的值( 无正则化时θ的更新公式为$ 𝜃_j := 𝜃_j - α\frac{1}{m} \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})x_j^{(i)} $)。</p>
-<h1 id="正则化逻辑回归"><a href="#正则化逻辑回归" class="headerlink" title="正则化逻辑回归"></a>正则化逻辑回归</h1><p>&emsp;&emsp;对于逻辑回归，我们也给代价函数增加一个正则化的表达式，得到代价函数：</p>
-<script type="math/tex; mode=display">
-    J(θ) = -\frac{1}{m} \sum_{i=1}^m [y^{(i)} log(h_θ(x^{(i)})) + (1-y^{(i)})log(1-h_θ(x^{(i)}))] + \frac{λ}{2m}\sum_{j=1}^n𝜃_j^2</script><p>&emsp;&emsp;Python 代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">costReg</span><span class="params">(theta, X, y, learningRate)</span>:</span></span><br><span class="line">  theta = np.matrix(theta)</span><br><span class="line">  X = np.matrix(X)</span><br><span class="line">  y = np.matrix(y)</span><br><span class="line">  first = np.multiply(-y, np.log(sigmoid(X*theta.T)))</span><br><span class="line">  second = np.multiply((<span class="number">1</span> - y), np.log(<span class="number">1</span> - sigmoid(X*theta.T)))</span><br><span class="line">  reg = (learningRate / (<span class="number">2</span> * len(X)) * np.sum(np.power(theta[:,<span class="number">1</span>:theta.shape[<span class="number">1</span>]],<span class="number">2</span>))</span><br><span class="line">  <span class="keyword">return</span> np.sum(first - second) / (len(X)) + reg</span><br></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;最小化该代价函数，通过求导，得出梯度下降算法为：</p>
-<script type="math/tex; mode=display">
-    𝜃_0 := 𝜃_0 - α\sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})x_0^{(i)}</script><script type="math/tex; mode=display">
-    𝜃_j := 𝜃_j - α\sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})x_j^{(i)} +  \frac{λ}{m}𝜃_j</script><p>这看上去和线性回归的梯度下降公式一模一样，但是逻辑回归的 $ ℎ𝜃(𝑥) = 𝑔(𝜃^𝑇𝑋) $ ，所以与线性回归不同。</p>
+<p>设定密码后生成用sha1算法加密后的哈希密文，如下：<br><img src="/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/sha1.jpg"></p>
+<ol>
+<li>然后用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>生成jupyter的config文件。<br><img src="/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/config.jpg"></p>
+<ol>
+<li>修改config文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.ip=&apos;\*&apos;</span><br><span class="line">c.NotebookApp.password = &apos;sha1:fe59676b9190:353c203f64cd33815e09b450d014e2ef9fab5669&apos;</span><br><span class="line">c.NotebookApp.open_browser = False</span><br><span class="line">c.NotebookApp.port =8888</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>设置ip为“*”表示任意ip可访问，原设定为“localhost”，所以之前用 <a href="http://server_ip:8888" target="_blank" rel="noopener">http://server_ip:8888</a> 访问时提示拒绝：<br><img src="/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/ip.jpg"><br>password处填写生成的哈希密文：<br><img src="/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/pwd.jpg"><br>open_browser设为False表示服务器无需在notebook启动时打开浏览器：<br><img src="/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/browser.jpg"><br>port表示端口，设置一个未占用的端口即可：<br><img src="/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/port.jpg"></p>
+<h3 id="本地访问服务器jupyter-notebook"><a href="#本地访问服务器jupyter-notebook" class="headerlink" title="本地访问服务器jupyter notebook"></a>本地访问服务器jupyter notebook</h3><p>&emsp;&emsp;服务器启动jupyter notebook后，在本地电脑上打开浏览器输入：<a href="http://server_ip:8888" target="_blank" rel="noopener">http://server_ip:8888</a> ，然后输入之前设置密码。大功告成。<br><img src="/Ppaddington.github.io/2019/09/15/远程访问jupyter-notebook/success.jpg"></p>
 
       
     </div>
@@ -407,12 +408,6 @@ J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/Ppaddington.github.io/tags/机器学习/" rel="tag"><i class="fa fa-tag"></i> 机器学习</a>
-          
-        </div>
-      
 
       
       
@@ -422,8 +417,8 @@ J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Ppaddington.github.io/2019/05/20/Logistic-Regression/" rel="next" title="Logistic Regression">
-                <i class="fa fa-chevron-left"></i> Logistic Regression
+              <a href="/Ppaddington.github.io/2019/08/16/2019年优秀大学生夏令营总结/" rel="next" title="2019年优秀大学生夏令营总结">
+                <i class="fa fa-chevron-left"></i> 2019年优秀大学生夏令营总结
               </a>
             
           </div>
@@ -431,10 +426,6 @@ J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Ppaddington.github.io/2019/06/05/Neural-Networks/" rel="prev" title="Neural Networks">
-                Neural Networks <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -560,7 +551,7 @@ J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#过拟合-over-fitting-问题"><span class="nav-number">1.</span> <span class="nav-text">过拟合(over-fitting)问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是过拟合问题？"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">什么是过拟合问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何解决过拟合问题？"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">如何解决过拟合问题？</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#代价函数"><span class="nav-number">2.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则化线性回归"><span class="nav-number">3.</span> <span class="nav-text">正则化线性回归</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正则化逻辑回归"><span class="nav-number">4.</span> <span class="nav-text">正则化逻辑回归</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jupyter-notebook配置文件"><span class="nav-number">2.</span> <span class="nav-text">jupyter notebook配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地访问服务器jupyter-notebook"><span class="nav-number">3.</span> <span class="nav-text">本地访问服务器jupyter notebook</span></a></li></ol></div>
             
 
           </div>
@@ -808,26 +799,6 @@ J(θ) = \frac{1}{2m} [ \sum_{i=1}^m (h_θ(x^{(i)}) - y^{(i)})^2 + λ \sum_{j=1}^
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
