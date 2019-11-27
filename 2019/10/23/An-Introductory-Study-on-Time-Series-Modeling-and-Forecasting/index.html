@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/Ppaddington.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/Ppaddington.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/Ppaddington.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Ppaddington.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/Ppaddington.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/Ppaddington.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/Ppaddington.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="时间序列简介时间序列的定义&amp;emsp;&amp;emsp;时间序列是一系列连续的数据点，通常在连续的时间内测量。它在数学上定义为向量x(t)的集合，t = 0,1,2，…其中t表示经过的时间。 时间序列的成分&amp;emsp;&amp;emsp;时间序列一般受四个主要成分的影响，这四个成分可以从观测数据中分离出来：趋势、周期性、季节性和不规则成分。">
+<meta name="keywords" content="git repository:git@github.com:Ppaddington&#x2F;Ppaddington.github.io git repository:git@github.com:Ppaddington&#x2F;Ppaddington.github.io">
+<meta property="og:type" content="article">
+<meta property="og:title" content="An Introductory Study on Time Series Modeling and Forecasting">
+<meta property="og:url" content="https://ppaddington.github.io/Ppaddington.github.io/2019/10/23/An-Introductory-Study-on-Time-Series-Modeling-and-Forecasting/index.html">
+<meta property="og:site_name" content="lalala">
+<meta property="og:description" content="时间序列简介时间序列的定义&amp;emsp;&amp;emsp;时间序列是一系列连续的数据点，通常在连续的时间内测量。它在数学上定义为向量x(t)的集合，t = 0,1,2，…其中t表示经过的时间。 时间序列的成分&amp;emsp;&amp;emsp;时间序列一般受四个主要成分的影响，这四个成分可以从观测数据中分离出来：趋势、周期性、季节性和不规则成分。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/10/23/An-Introductory-Study-on-Time-Series-Modeling-and-Forecasting/1.png">
+<meta property="og:updated_time" content="2019-10-25T09:52:52.488Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="An Introductory Study on Time Series Modeling and Forecasting">
+<meta name="twitter:description" content="时间序列简介时间序列的定义&amp;emsp;&amp;emsp;时间序列是一系列连续的数据点，通常在连续的时间内测量。它在数学上定义为向量x(t)的集合，t = 0,1,2，…其中t表示经过的时间。 时间序列的成分&amp;emsp;&amp;emsp;时间序列一般受四个主要成分的影响，这四个成分可以从观测数据中分离出来：趋势、周期性、季节性和不规则成分。">
+<meta name="twitter:image" content="https://ppaddington.github.io/Ppaddington.github.io/2019/10/23/An-Introductory-Study-on-Time-Series-Modeling-and-Forecasting/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/Ppaddington.github.io/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://ppaddington.github.io/Ppaddington.github.io/2019/10/23/An-Introductory-Study-on-Time-Series-Modeling-and-Forecasting/">
+
+
+
+
+
+  <title>An Introductory Study on Time Series Modeling and Forecasting | lalala</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/Ppaddington.github.io/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lalala</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">帅帅的昊:-)</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/Ppaddington.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/Ppaddington.github.io/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/Ppaddington.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/Ppaddington.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ppaddington.github.io/Ppaddington.github.io/Ppaddington.github.io/2019/10/23/An-Introductory-Study-on-Time-Series-Modeling-and-Forecasting/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lalala">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/Ppaddington.github.io/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lalala">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">An Introductory Study on Time Series Modeling and Forecasting</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-23T12:38:55+08:00">
+                2019-10-23
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-25T17:52:52+08:00">
+                2019-10-25
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  16
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="时间序列简介"><a href="#时间序列简介" class="headerlink" title="时间序列简介"></a>时间序列简介</h2><h4 id="时间序列的定义"><a href="#时间序列的定义" class="headerlink" title="时间序列的定义"></a>时间序列的定义</h4><p>&emsp;&emsp;时间序列是一系列连续的数据点，通常在连续的时间内测量。它在数学上定义为向量x(t)的集合，t = 0,1,2，…其中t表示经过的时间。</p>
+<h4 id="时间序列的成分"><a href="#时间序列的成分" class="headerlink" title="时间序列的成分"></a>时间序列的成分</h4><p>&emsp;&emsp;时间序列一般受四个主要成分的影响，这四个成分可以从观测数据中分离出来：趋势、周期性、季节性和不规则成分。</p>
+<a id="more"></a>
+<p>&emsp;&emsp;一个时间序列在很长一段时间内增加、减少或停滞的一般趋势被称为长期趋势或简单趋势。因此，可以说，趋势是一个时间序列中的长期运动。例如，与人口增长、城市房屋数量等相关的序列呈上升趋势，而与死亡率、流行病等相关的序列呈下降趋势。<br>&emsp;&emsp;时间序列的季节变化是指在一个季节内一年的波动。造成季节变化的重要因素有:气候和天气条件、风俗习惯、传统习惯等。例如，夏季冰淇淋销量增加，冬季毛织品销量增加。季节变化是商人、店主和生产者制定合理未来计划的重要因素。<br>&emsp;&emsp;时间序列中的周期性变化描述了由环境引起的中期变化，这些变化以循环的方式重复。一个周期的持续时间较长，通常为两年或两年以上。大多数经济和金融时间序列显示出某种周期性变化。例如，一个商业周期包括四个阶段，即:繁荣，衰退，萧条和复苏。<br>&emsp;&emsp;时间序列中的不规则或随机变化是由不可预测的影响造成的，这种影响不是规则的，也不会在特定的模式中重复。这些变化是由战争、罢工、地震、洪水、革命等事件引起的。对于测量时间序列中的随机波动，没有确定的统计技术。<br>&emsp;&emsp;考虑到这四个因素的影响，时间序列一般采用两种不同的模型，即乘法模型和加法模型。<br>&emsp;&emsp;&emsp;&emsp;Multiplicative Model: Y(t) = T(t)× S(t)×C(t)× I(t).<br>&emsp;&emsp;&emsp;&emsp;Additive Model: Y(t) = T(t) + S(t) + C(t) + I(t).<br>&emsp;&emsp;其中Y(t)为观测值，t(t)、S(t)、C(t)和I(t)分别为时刻的趋势、季节、周期和不规则变化。<br>&emsp;&emsp;乘法模型是基于时间序列的四个组成部分不一定是独立的，它们可以相互影响的假设;而在可加性模型中，假设四个分量是相互独立的。</p>
+<h4 id="时间序列分析"><a href="#时间序列分析" class="headerlink" title="时间序列分析"></a>时间序列分析</h4><p>&emsp;&emsp;在实际应用中，对给定的时间序列拟合合适的模型，利用已知的数据值估计相应的参数。将时间序列拟合到适当模型的过程称为时间序列分析。它包含了试图理解序列性质的方法，并且通常对未来的预测和模拟用。<br>&emsp;&emsp;在时间序列预测中，通过收集和分析过去的观测数据，建立一个合适的数学模型，捕捉该序列的基础数据生成过程[7,8]。然后使用该模型预测未来事件。这种方法在对连续观测后的统计模式了解不多或缺乏令人满意的解释模型时特别有用。时间序列预测在各个领域都有重要的应用。通常根据预测结果采取有价值的战略决策和预防措施。因此，做一个好的预测，即在一个时间序列上拟合一个合适的模型是很重要的。在过去的几十年里，为了开发和改进合适的时间序列预测模型，研究人员做了大量的工作。</p>
+<h4 id="时间序列与随机过程"><a href="#时间序列与随机过程" class="headerlink" title="时间序列与随机过程"></a>时间序列与随机过程</h4><p>&emsp;&emsp;时间序列在本质上是不确定的，也就是说，我们不能肯定地预测将来会发生什么。一般时间序列${x(t)，t=0,1,2}$假设遵循一定的概率模型，该模型描述了随机变量x的联合分布。描述时间序列的概率结构的数学表达式称为随机过程。因此，序列的观测序列实际上是产生序列的随机过程的一个样本实现。<br>&emsp;&emsp;通常的假设是，时间序列变量x服从正态分布，是独立同分布的。然而，时间序列实际上并不是完全的独立同分布;从长期来看，他们或多或少遵循某种规律。例如，如果某个城市今天的温度极高，那么可以合理地推测明天的温度也可能很高。这就是为什么时间序列预测使用适当的技术，得到接近实际值的结果。</p>
+<h4 id="平稳性的概念"><a href="#平稳性的概念" class="headerlink" title="平稳性的概念"></a>平稳性的概念</h4><p>&emsp;&emsp;平稳性的概念随机过程的平稳性概念可以用统计平衡的一种形式来表示。平稳过程的均值和方差等统计性质不随时间而变化。这是建立对未来预测有用的时间序列模型的必要条件。在此基础上，进一步降低了拟合模型的数学复杂度。<br><img src="/Ppaddington.github.io/2019/10/23/An-Introductory-Study-on-Time-Series-Modeling-and-Forecasting/1.png"></p>
+<h4 id="模型简约性原则"><a href="#模型简约性原则" class="headerlink" title="模型简约性原则"></a>模型简约性原则</h4><p>&emsp;&emsp;在建立时间序列模型时，我们必须考虑简约原则。根据这一原则，总是选择参数尽可能少的模型，以便充分表示未来的时间序列数据。在许多合适的模型中，我们应该考虑最简单的模型，同时仍然保持对时间序列固有特性的准确描述。<br>&emsp;&emsp;模型越复杂，偏离实际模型假设的可能性就越大。随着模型参数的增加，过拟合的风险也随之增加。过拟合时间序列模型可以很好地描述训练数据，但不适用于未来的预测。由于潜在的过度拟合会影响模型的预测能力，因此通常采用简约的原则来克服这个问题。</p>
+<h2 id="使用随机模型进行时间序列预测"><a href="#使用随机模型进行时间序列预测" class="headerlink" title="使用随机模型进行时间序列预测"></a>使用随机模型进行时间序列预测</h2><p>&emsp;&emsp;时间序列模型是线性的还是非线性的，取决于该序列的当前值是过去观测值的线性或非线性函数。<br>&emsp;&emsp;时间序列数据的一般模型可以有多种形式，代表不同的随机过程。广泛使用的线性时间序列模型有两种:自回归(AR)和移动平均(MA)模型。<br>&emsp;&emsp;自回归综合移动平均(ARMA)和自回归综合移动平均(ARIMA)模型已经在文献中被提出。<br>&emsp;&emsp;自回归分数积分移动平均(ARFIMA)模型概括了ARMA和ARIMA模型。<br>&emsp;&emsp;对于季节时间序列预测，ARIMA的一种变化，即。采用季节自回归综合移动平均(SARIMA)模型。ARIMA模型及其不同的变体基于著名的Box-Jenkins原理，因此这些模型也被广泛称为Box-Jenkins模型。<br>&emsp;&emsp;线性模型因其在理解和实现上的相对简单性而备受关注。然而，许多实际的时间序列显示非线性模式。例如，非线性模型适用于预测经济和金融时间序列的波动变化。考虑到这些事实，各种非线性模型被提出：自回归条件异方差性(ARCH)及其变体如广义ARCH(GARCH),指数广义ARCH(EGARCH)等,还有门限自回归(TAR)模型,非线性自回归(NAR)模型,非线性移动平均(NMA)模型等等。</p>
+<h4 id="ARMA（Autoregressive-Moving-Average）模型"><a href="#ARMA（Autoregressive-Moving-Average）模型" class="headerlink" title="ARMA（Autoregressive Moving Average）模型"></a>ARMA（Autoregressive Moving Average）模型</h4><p>&emsp;&emsp;ARMA(p, g)模型是AR(p)和MA(g)模型的组合，适用于单变量时间序列建模。在AR(p)模型中，假定变量的未来值是p个过去的观测值和一个随机误差加上一个常数项的线性组合。AR(p)模型的数学表达式为:</p>
+<script type="math/tex; mode=display">
+y_t = c + \sum_{i=1}^p \varphi_i y_{t-i} + \varepsilon_t</script><p>&emsp;&emsp;其中y、s分别为t、q时段的实际值和随机误差;(i = 1,2 ….p)为模型参数，c为常数。整数常数p称为模型的阶数。为简单起见，有时省略常数项。通常用于使用给定的时间序列估计AR过程的参数性别比例保证。就像AR(p)模型回归到序列的过去值一样，MA(q)模型使用过去的误差作为解释变量。MA(q)模型:</p>
+<script type="math/tex; mode=display">
+y_t = \mu + \sum_{j=1}^q \theta_j y_{t-j} + \varepsilon_t</script><p>&emsp;&emsp;这里$\mu$是级数的均值，0(j=1,2…9)为模型参数，q为模型的阶数。假设随机冲击是一个白噪声过程，即一系列独立且同分布(i.i.d)的随机变量，其均值为零，方差为常数o2。一般认为，随机冲击服从典型的正态分布。因此，从概念上讲，移动平均模型是当前对时间序列的观测对一个或多个朊病毒观测的随机冲击的线性回归。由于随机误差项在时间序列中是不可预见的，因此将随机误差项拟合到时间序列中要比拟合AR模型复杂得多自回归(AR)模型和移动平均(MA)模型可以有效地结合在一起，形成一个通用的和有用的时间序列模型，称为ARMA模型。数学上，ARMA(p, g)模型表示为:</p>
+<script type="math/tex; mode=display">
+y_t = c + \varepsilon_t + \sum_{i=1}^p \varphi_i y_{t-i} + \sum_{j=1}^q \theta_j y_{t-j}</script><p>&emsp;&emsp;这里模型对p、q的阶数分别为p自回归项和q移动平均项。</p>
+<h4 id="ARIMA模型-Autoregressive-Integrated-Moving-Average"><a href="#ARIMA模型-Autoregressive-Integrated-Moving-Average" class="headerlink" title="ARIMA模型(Autoregressive Integrated Moving Average)"></a>ARIMA模型(Autoregressive Integrated Moving Average)</h4><p>&emsp;&emsp;ARMA模型只能用于平稳的时间序列数据，但在实践中许多时间序列，如经济和商业上表现出非平稳的行为。包含趋势和季节模式的时间序列在本质上也是非平稳的。因此，从应用的角度来看，ARMA模型不足以恰当地描述非平稳时间序列，这是在实践中经常遇到的问题。因此，ARIMA模型被提出，它是一个ARMA模型的泛化，也包括了非平稳性的情况。在ARIMA模型中，通过对数据点的有限差分使非平稳时间序列平稳。</p>
+<h2 id="使用神经网络进行时间序列预测"><a href="#使用神经网络进行时间序列预测" class="headerlink" title="使用神经网络进行时间序列预测"></a>使用神经网络进行时间序列预测</h2><h4 id="人工神经网络简介"><a href="#人工神经网络简介" class="headerlink" title="人工神经网络简介"></a>人工神经网络简介</h4><p>&emsp;&emsp;人工神经网络试图识别输入数据中的规律和模式，从经验中学习，然后根据已知的先验知识提供概括的结果。<br>&emsp;&emsp;神经网络的特征使它们非常适合用于时间序列分析和预测：<br>&emsp;&emsp;• 首先，人工神经网络本质上是数据驱动和自适应的。不需要指定特定的模型形式，也不需要对数据的统计分布做任何先验假设;根据数据的特征自适应地形成期望的模型.<br>&emsp;&emsp;• 其次，与ARIMA方法等各种传统的线性方法相比，人工神经网络具有固有的非线性，这使得它们在建模复杂数据模式时更加实用和准确。有许多实例表明，神经网络比各种线性模型能更好地进行分析和预测。<br>&emsp;&emsp;• 最后ANN是通用函数逼近器。已经证明，网络可以将任何连续函数近似到任何期望的精度。神经网络利用数据信息的并行处理来近似一类大的函数，具有很高的精度。此外，它们还可以处理输入数据错误、不完整或模糊的情况。</p>
+<h4 id="几种常见的网络"><a href="#几种常见的网络" class="headerlink" title="几种常见的网络"></a>几种常见的网络</h4><p>&emsp;&emsp;时滞神经网络（TLNN），在TLNN中，输入节点是某一特定时延的时间序列值。例如，对于一个时间序列，季节性周期s = 12的典型TLNN可以将输入节点包含为t−1、t−2和t−12时的滞后值。利用滞后1、2和12的值预测t时刻的值。<br>&emsp;&emsp;季节神经网络（SANN），主要用于季节时间序列建模。</p>
+<h2 id="使用支持向量机进行时间序列预测"><a href="#使用支持向量机进行时间序列预测" class="headerlink" title="使用支持向量机进行时间序列预测"></a>使用支持向量机进行时间序列预测</h2><h4 id="LS-SVM"><a href="#LS-SVM" class="headerlink" title="LS-SVM"></a>LS-SVM</h4><p>&emsp;&emsp;LS-SVM采用等式约束与平方和误差(SSE)代价函数，代替了传统的二次规划方法。LS-SVM技术的主要优点是将传统的QPP（质量计划措施(Quality Program Provision)）问题转化为同时存在的线性系统问题，从而保证了计算的简单性、快速收敛性和高精度。</p>
+<h4 id="DLS-SVM"><a href="#DLS-SVM" class="headerlink" title="DLS-SVM"></a>DLS-SVM</h4><p>&emsp;&emsp;DLS-SVM是LS-SVM的改进版本，适用于实时系统识别和时间序列预测。与递归LS-SVM算法相比，它采用了相似的概念，但不同的计算方法。DLS-SVM的关键特性是，它可以跟踪非线性时变系统的动态，只要增加一个新的观测值，就会删除一个已有的数据点，从而保持窗口大小不变。</p>
+<h2 id="预测质量衡量"><a href="#预测质量衡量" class="headerlink" title="预测质量衡量"></a>预测质量衡量</h2><p>&emsp;&emsp;设 $ y_t $ 为真实值， $ f_t $ 为预测值，$ e_t = y_t - f_t $ 为预测误差。假设测试集大小为n，均值 $\overline{y} = \frac{1}{n} \sum_{t=1}^n y_t$，方差 $\sigma^2 = \frac{1}{n-1} \sum_{t=1}^n (y_t - \overline{y})^2 $。</p>
+<h4 id="Mean-Forecast-Error-MFE"><a href="#Mean-Forecast-Error-MFE" class="headerlink" title="Mean Forecast Error (MFE)"></a>Mean Forecast Error (MFE)</h4><script type="math/tex; mode=display">
+MFE = \frac{1}{n} \sum_{t=1}^n e_t</script><p>&emsp;&emsp;MFE的性质：<br>&emsp;&emsp;• 它是对预测值与实际值的平均偏差的度量。﻿<br>&emsp;&emsp;• 它显示了误差的方向，因此也称为预测偏差。<br>&emsp;&emsp;• 在MFE中，正负误差的影响相互抵消，无法知道它们的确切数量。<br>&emsp;&emsp;• MFE为零并不意味着预测是完美的，即没有误差;相反，它只是表明预测达到了适当的目标。<br>&emsp;&emsp;• MFE不涉及极端误差。<br>&emsp;&emsp;• 它取决于测量的规模，也受到数据转换的影响。<br>&emsp;&emsp;• MFE最好尽可能接近于零。</p>
+<h4 id="Mean-Absolute-Error-MAE"><a href="#Mean-Absolute-Error-MAE" class="headerlink" title="Mean Absolute Error (MAE)"></a>Mean Absolute Error (MAE)</h4><script type="math/tex; mode=display">
+MAE = \frac{1}{n} \sum_{t=1}^n |e_t|</script><p>&emsp;&emsp;MAE的性质：<br>&emsp;&emsp;• 它测量预测值与原始值的平均绝对偏差。<br>&emsp;&emsp;• 它也被称为平均绝对偏差(MAD)。<br>&emsp;&emsp;• 它显示了由于预测而产生的总体误差的大小。<br>&emsp;&emsp;• 在MAE中，正负误差的影响不会相互抵消。<br>&emsp;&emsp;• 与MFE不同，MAE不提供关于错误方向的任何概念。<br>&emsp;&emsp;• 对于一个好的预测，获得的MAE应该尽可能小。<br>&emsp;&emsp;• 与MFE一样，MAE也依赖于测量和数据转换的规模。<br>&emsp;&emsp;• 极端预报误差不能用MAE来分析。</p>
+<h4 id="Mean-Absolute-Percentage-Error-MAPE"><a href="#Mean-Absolute-Percentage-Error-MAPE" class="headerlink" title="Mean Absolute Percentage Error (MAPE)"></a>Mean Absolute Percentage Error (MAPE)</h4><script type="math/tex; mode=display">
+MAPE = \frac{1}{n} \sum_{t=1}^n |\frac{e_t}{y_t}|</script><p>&emsp;&emsp;• 这个度量表示平均绝对错误发生的百分比。<br>&emsp;&emsp;• 它独立于测量尺度，但受数据转换的影响。<br>&emsp;&emsp;• 它没有显示错误的方向。<br>&emsp;&emsp;• 在这个度量中，相反的符号错误不会相互抵消。</p>
+<h4 id="Mean-Percentage-Error"><a href="#Mean-Percentage-Error" class="headerlink" title="Mean Percentage Error"></a>Mean Percentage Error</h4><script type="math/tex; mode=display">
+MPE = \frac{1}{n} \sum_{t=1}^n (\frac{e_t}{y_t})×100</script><p>&emsp;&emsp;• MPE表示预测时发生的平均错误百分比。<br>&emsp;&emsp;• 它与MAPE有相似的属性，除了它显示了错误发生的方向。<br>&emsp;&emsp;• 相反的符号错误相互影响并相互抵消<br>&emsp;&emsp;• 与MFE一样，通过获得接近于零的MPE值，我们不能得出相应模型运行得很好的结论。<br>&emsp;&emsp;• 对于一个好的预测，所得到的MPE应该很小。</p>
+<h4 id="Mean-Squared-Error-MSE"><a href="#Mean-Squared-Error-MSE" class="headerlink" title="Mean Squared Error (MSE)"></a>Mean Squared Error (MSE)</h4><script type="math/tex; mode=display">
+MSE = \frac{1}{n} \sum_{t=1}^n e_t^2</script><p>&emsp;&emsp;<br>&emsp;&emsp;• 它是对预测值的平均平方偏差的度量。<br>&emsp;&emsp;• 相反的符号错误不会相互抵消，MSE给出了预测过程中发生的错误的总体概念。<br>&emsp;&emsp;• 它对预测过程中出现的极端误差进行筛选。<br>&emsp;&emsp;• MSE强调总体预测误差实际上受个体误差影响较大，即大误差比小误差代价大。<br>&emsp;&emsp;• MSE没有提供关于总体错误方向的任何概念。<br>&emsp;&emsp;• MSE对规模变化和数据转换非常敏感。<br>&emsp;&emsp;• 虽然MSE是一个很好的测量整体预测误差的方法，但是它不像前面讨论的其他方法那样直观和容易理解。</p>
+<h4 id="Sum-of-Squared-Error-SSE"><a href="#Sum-of-Squared-Error-SSE" class="headerlink" title="Sum of Squared Error (SSE)"></a>Sum of Squared Error (SSE)</h4><script type="math/tex; mode=display">
+SSE = \sum_{t=1}^n e_t^2</script><p>&emsp;&emsp;• 它度量的是预测观测值与实际值之间的总平方偏差。<br>&emsp;&emsp;• SSE的性质与MSE相同。</p>
+<h4 id="Signed-Mean-Squared-Error-SMSE"><a href="#Signed-Mean-Squared-Error-SMSE" class="headerlink" title="Signed Mean Squared Error(SMSE)"></a>Signed Mean Squared Error(SMSE)</h4><script type="math/tex; mode=display">
+SSE = \frac{1}{n} \sum_{t=1}^n (\frac{e_t}{|e_t|}) e_t^2</script><p>&emsp;&emsp;• 它和MSE一样，只是这里保留了每个平方误差的原始符号。<br>&emsp;&emsp;• 统计极值误差，在预测时发生。<br>&emsp;&emsp;• 与MSE不同，SMSE还显示总体错误的方向。<br>&emsp;&emsp;• 在计算SMSE时，正负误差相互抵消。<br>&emsp;&emsp;• 与MSE一样，SMSE对规模变化和数据转换也很敏感。</p>
+<h4 id="Root-Mean-Squared-Error-RMSE"><a href="#Root-Mean-Squared-Error-RMSE" class="headerlink" title="Root Mean Squared Error(RMSE)"></a>Root Mean Squared Error(RMSE)</h4><script type="math/tex; mode=display">
+RSSE = \sqrt{SSE} = \sqrt{ \frac{1}{n} \sum_{t=1}^n e_t^2 }</script><p>&emsp;&emsp;• MSE的所有性质也适用于RMSE。</p>
+<h4 id="Normalized-Mean-Squared-Error-NMSE"><a href="#Normalized-Mean-Squared-Error-NMSE" class="headerlink" title="Normalized Mean Squared Error (NMSE)"></a>Normalized Mean Squared Error (NMSE)</h4><script type="math/tex; mode=display">
+NMSE = \frac{MSE}{\sigma^2} = \frac{1}{\sigma^2 n} \sum_{t=1}^n e_t^2</script><p>&emsp;&emsp;归一化均方根误差的性质：<br>&emsp;&emsp;• NMSE将得到的MSE除以测试方差后归一化。<br>&emsp;&emsp;• 它是一种平衡的误差测量方法，对判断模型的预测精度非常有效。<br>&emsp;&emsp;• NMSE值越小，预测效果越好。<br>&emsp;&emsp;• NMSE的其他性质与MSE相同。</p>
+<h4 id="Theil’s-U-statistics"><a href="#Theil’s-U-statistics" class="headerlink" title="Theil’s U-statistics"></a>Theil’s U-statistics</h4><script type="math/tex; mode=display">
+U = \frac{\sqrt{\frac{1}{n} \sum_{t=1}^n e_t^2}}{\sqrt{\frac{1}{n} \sum_{t=1}^n f_t^2} \sqrt{\frac{1}{n} \sum_{t=1}^n y_t^2}}</script><p>&emsp;&emsp;• 它是预测总误差的标准化度量。<br>&emsp;&emsp;• 0≤U≤1;U = 0表示完全匹配。<br>&emsp;&emsp;• 这个度量受到尺度变化和数据转换的影响。<br>&emsp;&emsp;• 为了评估良好的预测精度，u统计量最好接近于零</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Ppaddington.github.io/2019/10/22/哈工大（深圳）推免生复试/" rel="next" title="哈工大（深圳）推免生复试">
+                <i class="fa fa-chevron-left"></i> 哈工大（深圳）推免生复试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/Ppaddington.github.io/images/avatar.png" alt="lalala">
+            
+              <p class="site-author-name" itemprop="name">lalala</p>
+              <p class="site-description motion-element" itemprop="description">翻山而歌</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/Ppaddington.github.io/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/Ppaddington.github.io/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+					<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=27955658&auto=1&height=66"></iframe>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#时间序列简介"><span class="nav-number">1.</span> <span class="nav-text">时间序列简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#时间序列的定义"><span class="nav-number">1.0.1.</span> <span class="nav-text">时间序列的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间序列的成分"><span class="nav-number">1.0.2.</span> <span class="nav-text">时间序列的成分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间序列分析"><span class="nav-number">1.0.3.</span> <span class="nav-text">时间序列分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时间序列与随机过程"><span class="nav-number">1.0.4.</span> <span class="nav-text">时间序列与随机过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#平稳性的概念"><span class="nav-number">1.0.5.</span> <span class="nav-text">平稳性的概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模型简约性原则"><span class="nav-number">1.0.6.</span> <span class="nav-text">模型简约性原则</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#使用随机模型进行时间序列预测"><span class="nav-number">2.</span> <span class="nav-text">使用随机模型进行时间序列预测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ARMA（Autoregressive-Moving-Average）模型"><span class="nav-number">2.0.1.</span> <span class="nav-text">ARMA（Autoregressive Moving Average）模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ARIMA模型-Autoregressive-Integrated-Moving-Average"><span class="nav-number">2.0.2.</span> <span class="nav-text">ARIMA模型(Autoregressive Integrated Moving Average)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用神经网络进行时间序列预测"><span class="nav-number">3.</span> <span class="nav-text">使用神经网络进行时间序列预测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#人工神经网络简介"><span class="nav-number">3.0.1.</span> <span class="nav-text">人工神经网络简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#几种常见的网络"><span class="nav-number">3.0.2.</span> <span class="nav-text">几种常见的网络</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用支持向量机进行时间序列预测"><span class="nav-number">4.</span> <span class="nav-text">使用支持向量机进行时间序列预测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LS-SVM"><span class="nav-number">4.0.1.</span> <span class="nav-text">LS-SVM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DLS-SVM"><span class="nav-number">4.0.2.</span> <span class="nav-text">DLS-SVM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预测质量衡量"><span class="nav-number">5.</span> <span class="nav-text">预测质量衡量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Mean-Forecast-Error-MFE"><span class="nav-number">5.0.1.</span> <span class="nav-text">Mean Forecast Error (MFE)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mean-Absolute-Error-MAE"><span class="nav-number">5.0.2.</span> <span class="nav-text">Mean Absolute Error (MAE)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mean-Absolute-Percentage-Error-MAPE"><span class="nav-number">5.0.3.</span> <span class="nav-text">Mean Absolute Percentage Error (MAPE)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mean-Percentage-Error"><span class="nav-number">5.0.4.</span> <span class="nav-text">Mean Percentage Error</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mean-Squared-Error-MSE"><span class="nav-number">5.0.5.</span> <span class="nav-text">Mean Squared Error (MSE)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sum-of-Squared-Error-SSE"><span class="nav-number">5.0.6.</span> <span class="nav-text">Sum of Squared Error (SSE)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Signed-Mean-Squared-Error-SMSE"><span class="nav-number">5.0.7.</span> <span class="nav-text">Signed Mean Squared Error(SMSE)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Root-Mean-Squared-Error-RMSE"><span class="nav-number">5.0.8.</span> <span class="nav-text">Root Mean Squared Error(RMSE)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Normalized-Mean-Squared-Error-NMSE"><span class="nav-number">5.0.9.</span> <span class="nav-text">Normalized Mean Squared Error (NMSE)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Theil’s-U-statistics"><span class="nav-number">5.0.10.</span> <span class="nav-text">Theil’s U-statistics</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lalala</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">25k</span>
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/Ppaddington.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Ppaddington.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Ppaddington.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Ppaddington.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Ppaddington.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Ppaddington.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Ppaddington.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/Ppaddington.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/Ppaddington.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/Ppaddington.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/Ppaddington.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/Ppaddington.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/Ppaddington.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/Ppaddington.github.io/js/src/bootstrap.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+<script src="/Ppaddington.github.io/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/Ppaddington.github.io/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+</html>
